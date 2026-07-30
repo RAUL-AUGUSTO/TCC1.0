@@ -48,4 +48,4 @@ O sistema será desenvolvido de forma modular, permitindo sua adaptação para d
 
 ## Autor
 
-**Raul Fornalha**
+**Raul Augusto Forlin**
