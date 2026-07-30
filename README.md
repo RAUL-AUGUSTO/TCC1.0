@@ -27,15 +27,15 @@ Criar uma plataforma simples, moderna e intuitiva para facilitar o processo de a
 ### Já desenvolvidas
 - Interface responsiva
 - Estrutura inicial do sistema
+- sistema de login (mas sem segurança por enquanto)
 - Páginas de navegação
 
 ### Em desenvolvimento
 - Cadastro de clientes
-- Sistema de login
+- Sistema de login (com segurança)
 - Agendamento de horários
 - Painel administrativo
 - Banco de dados para armazenamento das informações
-- Validação de usuários
 - Gerenciamento de horários e serviços
 
 ## Objetivo Futuro
@@ -48,4 +48,4 @@ O sistema será desenvolvido de forma modular, permitindo sua adaptação para d
 
 ## Autor
 
-**Raul Augusto Forlin**
+**Raul Augusto Forlini**
