@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - BookSy</title>
+
+    <link rel="stylesheet" href="../CSS/StyledologinTCC.css">
+</head>
+
+<body>
+
+    <div class="container-login">
+
+        <div id="formLogin">
+
+            <h2 class="titulo-formulario">Login</h2>
+
+            <input type="email" id="loginEmail" placeholder="Email">
+
+            <input type="password" id="loginSenha" placeholder="Senha">
+
+            <button onclick="login()">Entrar</button>
+
+            <div class="alternar-formulario" onclick="mostrarCadastro()">
+                Não tem conta? Cadastre-se
+            </div>
+
+            <div class="alternar-formulario"
+                 onclick="window.location.href='../HTML/APRESENTACAO.html'">
+                ← Voltar para apresentação
+            </div>
+
+            <div class="mensagem" id="loginMessage"></div>
+
+        </div>
+
+        <div id="formCadastro" class="oculto">
+
+            <h2 class="titulo-formulario">Cadastro</h2>
+
+            <input type="text" id="cadNome" placeholder="Usuário">
+
+            <input type="email" id="cadEmail" placeholder="Email">
+
+            <input type="password" id="cadSenha" placeholder="Senha">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+
+            <div class="alternar-formulario" onclick="mostrarLogin()">
+                Já tem conta? Fazer login
+            </div>
+
+            <div class="alternar-formulario"
+                 onclick="window.location.href='../HTML/APRESENTACAO.html'">
+                ← Voltar para apresentação
+            </div>
+
+            <div class="mensagem" id="cadMessage"></div>
+
+        </div>
+
+    </div>
+
+<script>
+
+function mostrarCadastro() {
+    document.getElementById("formLogin").classList.add("oculto");
+    document.getElementById("formCadastro").classList.remove("oculto");
+}
+
+function mostrarLogin() {
+    document.getElementById("formCadastro").classList.add("oculto");
+    document.getElementById("formLogin").classList.remove("oculto");
+}
+
+function cadastrar() {
+
+    const nome = document.getElementById("cadNome").value;
+    const email = document.getElementById("cadEmail").value;
+    const senha = document.getElementById("cadSenha").value;
+
+    if (!nome || !email || !senha) {
+
+        document.getElementById("cadMessage").innerText = "Preencha todos os campos!";
+        document.getElementById("cadMessage").style.color = "red";
+        return;
+    }
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const usuarioExistente = usuarios.find(
+        usuario => usuario.email === email
+    );
+
+    if (usuarioExistente) {
+
+        document.getElementById("cadMessage").innerText = "Email já cadastrado!";
+        document.getElementById("cadMessage").style.color = "red";
+        return;
+    }
+
+    usuarios.push({
+        nome,
+        email,
+        senha
+    });
+
+    localStorage.setItem(
+        "usuarios",
+        JSON.stringify(usuarios)
+    );
+
+    document.getElementById("cadMessage").innerText = "Cadastro realizado com sucesso!";
+    document.getElementById("cadMessage").style.color = "green";
+
+    setTimeout(() => {
+        mostrarLogin();
+    }, 1500);
+}
+
+function login() {
+
+    const email = document.getElementById("loginEmail").value;
+    const senha = document.getElementById("loginSenha").value;
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const usuario = usuarios.find(
+        usuario => usuario.email === email &&
+                   usuario.senha === senha
+    );
+
+    if (usuario) {
+
+        document.getElementById("loginMessage").innerText = "Login realizado com sucesso!";
+        document.getElementById("loginMessage").style.color = "green";
+
+        localStorage.setItem(
+            "usuarioLogado",
+            JSON.stringify(usuario)
+        );
+
+        setTimeout(() => {
+            window.location.href = "HOME-TCC.html";
+        }, 1000);
+
+    } else {
+
+        document.getElementById("loginMessage").innerText = "Email ou senha incorretos!";
+        document.getElementById("loginMessage").style.color = "red";
+    }
+}
+
+</script>
+
+</body>
+</html>

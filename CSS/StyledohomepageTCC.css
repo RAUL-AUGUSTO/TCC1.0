@@ -1,0 +1,195 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+/* ================= CORES ================= */
+
+.letra-azul{
+    color:rgb(13,95,221);
+}
+
+/* ================= BODY ================= */
+
+body{
+
+    min-height:100vh;
+
+    background-image:url("1014.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:-1;
+}
+
+/* ================= CABEÇALHO ================= */
+
+.cabecalho{
+
+    background:linear-gradient(
+        135deg,
+        rgb(9,32,101),
+        rgb(8,11,44)
+    );
+
+    padding:20px 35px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.titulo-logo{
+
+    color:white;
+    font-size:32px;
+}
+
+/* ================= MENU ================= */
+
+.menu-navegacao{
+
+    margin-left:auto;
+    margin-right:30px;
+}
+
+.lista-menu{
+
+    list-style:none;
+
+    display:flex;
+    gap:25px;
+}
+
+.link-menu{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.link-menu:hover{
+
+    color:rgb(13,95,221);
+}
+
+/* ================= BOTÃO ================= */
+
+.botao-principal{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background-color:rgb(13,95,221);
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.botao-principal:hover{
+
+    filter:brightness(120%);
+}
+
+/* ================= CONTEÚDO ================= */
+
+.conteudo-pagina{
+
+    padding:40px 20px;
+}
+
+.secao-conteudo{
+
+    display:none;
+}
+
+.card-conteudo{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+}
+
+.card-conteudo h2{
+
+    margin-bottom:15px;
+
+    color:rgb(9,32,101);
+}
+
+.card-conteudo p{
+
+    color:#555;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width:768px){
+
+    .cabecalho{
+
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu-navegacao{
+
+        margin:0;
+    }
+
+    .lista-menu{
+
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .card-conteudo{
+
+        padding:20px;
+    }
+}
+
+.area-logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-cabecalho{
+
+    width:60px;
+    height:60px;
+}

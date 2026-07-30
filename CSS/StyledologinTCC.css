@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+/* ================= FUNDO ================= */
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("1014.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.55);
+
+    z-index:-1;
+}
+
+/* ================= CONTAINER ================= */
+
+.container-login{
+
+    width:350px;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    background:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* ================= TÍTULOS ================= */
+
+.titulo-formulario{
+
+    text-align:center;
+
+    margin-bottom:20px;
+}
+
+/* ================= CAMPOS ================= */
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:8px 0;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+}
+
+/* ================= BOTÃO ================= */
+
+button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#0f62d8;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    filter:brightness(120%);
+
+    transform:translateY(-2px);
+}
+
+button:active{
+
+    transform:scale(.98);
+}
+
+/* ================= LINKS DE TROCA ================= */
+
+.alternar-formulario{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    color:#777;
+
+    transition:.3s;
+}
+
+.alternar-formulario:hover{
+
+    color:#0f62d8;
+}
+
+/* ================= UTILITÁRIOS ================= */
+
+.oculto{
+
+    display:none;
+}
+
+.mensagem{
+
+    margin-top:10px;
+
+    text-align:center;
+
+    font-size:14px;
+}

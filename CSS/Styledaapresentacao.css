@@ -1,0 +1,208 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+.letraazulclara{
+    color:rgb(13,95,221);
+    filter:brightness(140%);
+}
+
+.travarletra{
+    position:fixed;
+}
+
+h1{
+    text-align:left;
+    margin-left:90px;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:linear-gradient(135deg,rgb(9,32,101),rgb(8,11,44));
+    color:white;
+    padding:20px 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo1{
+    width:90px;
+    height:90px;
+    padding-top:5px;
+    position:fixed;
+}
+
+.menu-navegacao{
+    margin-left:auto;
+}
+
+.lista-menu{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.item-menu{
+    display:flex;
+    align-items:center;
+}
+
+.link-menu{
+    text-decoration:none;
+    color:white;
+    font-size:21px;
+    transition:.3s;
+}
+
+.link-menu:hover{
+    color:rgb(13,95,221);
+    filter:brightness(160%);
+}
+
+/* ================= BOTÃO ================= */
+
+.btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background-color:#0f62d8;
+    color:#fff;
+    font-size:19px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    filter:brightness(150%);
+}
+
+/* ================= BOTÃO 2 (gerenciar) ================= */
+
+.btn2{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background-color:#01122b;
+    color:#fff;
+    font-size:19px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn2:hover{
+    filter:brightness(150%);
+}
+
+/* ================= ABAS ================= */
+
+#funcionalidades{
+    display:none;
+}
+
+/* ================= SEÇÃO PRINCIPAL ================= */
+
+.secao-principal{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background-image:url("../IMG/1014.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.secao-principal::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    backdrop-filter:blur(1px);
+    background:rgba(0,0,0,.5);
+}
+
+.conteudo-principal,
+.conteudofunc{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:60px;
+    margin-left:230px;
+    z-index:1;
+}
+
+/* ================= LOGO PRINCIPAL ================= */
+
+.logo-principal{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+/* ================= TEXTO PRINCIPAL ================= */
+
+.texto-principal{
+    color:white;
+    max-width:600px;
+    position:relative;
+    z-index:1;
+}
+
+.texto-principal h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.texto-principal p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .travarletra,
+    .logo1{
+        position:static;
+    }
+
+    h1{
+        margin-left:0;
+        text-align:center;
+    }
+
+    .secao-principal{
+        justify-content:center;
+        padding:20px;
+    }
+
+    .conteudo-principal,
+    .conteudofunc{
+        flex-direction:column;
+        margin:0;
+        text-align:center;
+    }
+
+    .logo-principal{
+        margin-bottom:20px;
+    }
+
+    .texto-principal h2{
+        font-size:32px;
+    }
+
+    .texto-principal p{
+        font-size:16px;
+    }
+}
